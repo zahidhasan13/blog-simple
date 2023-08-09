@@ -25,7 +25,7 @@ const Blog = (props) => {
             </div>
             <div className="m-4">
             <h1 className="text-3xl font-bold mb-6">{blogTitle}</h1>
-            <button onClick={() => addReadTime(props.blog)} className="text-blue-700 font-medium lg:hover:underline focus:underline">mark as read</button>
+            <button onClick={() => addReadTime(props.blog)} className="text-blue-700 font-medium lg:hover:underline">mark as read</button>
             </div>
         </div>
     );
