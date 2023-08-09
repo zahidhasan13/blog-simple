@@ -2,7 +2,7 @@
 const ReadTime = () => {
     return (
         <div>
-            
+            readtime
         </div>
     );
 };
