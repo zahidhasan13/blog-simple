@@ -5,19 +5,26 @@ import Blog from "../Blog/Blog";
 const Blogs = (props) => {
     const addToBookmark = props.addToBookmark;
     const addReadTime = props.addReadTime;
+    const already = props.bookmark;
 
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('blog.json')
-        .then(res => res.json())
-        .then(data => setBlogs(data))
-    },[])
+        fetch("blog.json")
+            .then((res) => res.json())
+            .then((data) => setBlogs(data));
+    }, []);
     return (
         <div className="m-4">
-            {
-                blogs.map(blog => <Blog key={blog.id} blog={blog} addToBookmark={addToBookmark} addReadTime={addReadTime}></Blog>)
-            }
+            {blogs.map((blog) => (
+                <Blog
+                    key={blog.id}
+                    blog={blog}
+                    addToBookmark={addToBookmark}
+                    addReadTime={addReadTime}
+                    already={already}
+                ></Blog>
+            ))}
         </div>
     );
 };
