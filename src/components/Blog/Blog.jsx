@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const Blog = (props) => {
-    console.log(props);
     const {blogTitle, coverImg, authorName, authorImg, publishDate, readTime} = props.blog;
+    const addToBookmark = props.addToBookmark;
+    const addReadTime = props.addReadTime;
     return (
         <div>
             <img src={coverImg} alt="" className="w-full rounded"/>
@@ -19,12 +20,12 @@ const Blog = (props) => {
                     </div>
                 </div>
                 <div className="text-md text-gray-500">
-                    <span>{readTime} min read <button><FontAwesomeIcon icon={faBookmark} /></button></span>
+                    <span>{readTime} min read <button onClick={() => addToBookmark(props.blog)}><FontAwesomeIcon icon={faBookmark} /></button></span>
                 </div>
             </div>
             <div className="m-4">
             <h1 className="text-3xl font-bold mb-6">{blogTitle}</h1>
-            <button className="text-blue-700 font-medium hover:underline">mark as read</button>
+            <button onClick={() => addReadTime(props.blog)} className="text-blue-700 font-medium lg:hover:underline focus:underline">mark as read</button>
             </div>
         </div>
     );
